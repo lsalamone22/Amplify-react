@@ -56,7 +56,15 @@ useEffect(() => {
       </button>
 
     </form>
-    {JSON.stringify(tasks)}
+
+    {tasks.map(task => {
+        return <article className="card card-body">
+          <h2>{task.name}</h2>
+          <p>{task.description}</p>
+        </article>
+
+    })}
+
 
     <Button onClick={signOut}>Sign out</Button>
    </>
