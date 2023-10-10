@@ -40,19 +40,22 @@ useEffect(() => {
     <div className="container"> 
     <div className="row">
       
-        <Alert variation="info">Welcome</Alert>
+        <Alert variation="info">Registro</Alert>
 
-        <Heading level={1}>Hello {user.username}</Heading>
+        <Heading level={1}>Bienvenido estimado usuario</Heading>
         <form onSubmit={handleSubmit}>
           <input name="name" placeholder="Title"
           onChange={e => setTask({...task, name: e.target.
-          value})}/>
+          value})}
+          className="form-control"
+          />
 
-          <textarea name="description" placeholder="description"
+          <input name="description" placeholder="Lastname"
           onChange={e => setTask({...task, description: e.target.
-            value})}></textarea>
+            value})}
+            className="form-control"/>
 
-          <button>
+          <button className="btn btn-primary">
             Submit
           </button>
 
