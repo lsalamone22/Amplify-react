@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import {API, graphqlOperation} from 'aws-amplify'
 import {createTask} from './graphql/mutations'
 import {listTasks} from './graphql/queries'
-import { withAuthenticator, Button, Heading } from 
+import { withAuthenticator, Button, Heading, Alert } from 
 '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import './App.css';
@@ -38,6 +38,9 @@ useEffect(() => {
 
   return (
    <>
+
+   <Alert variation="info">Welcome</Alert>
+
    <Heading level={1}>Hello {user.username}</Heading>
     <form onSubmit={handleSubmit}>
       <input name="name" placeholder="Title"
