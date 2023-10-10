@@ -37,37 +37,41 @@ useEffect(() => {
 
 
   return (
-   <>
+    <div className="container"> 
+    <div className="row">
+      
+        <Alert variation="info">Welcome</Alert>
 
-   <Alert variation="info">Welcome</Alert>
+        <Heading level={1}>Hello {user.username}</Heading>
+        <form onSubmit={handleSubmit}>
+          <input name="name" placeholder="Title"
+          onChange={e => setTask({...task, name: e.target.
+          value})}/>
 
-   <Heading level={1}>Hello {user.username}</Heading>
-    <form onSubmit={handleSubmit}>
-      <input name="name" placeholder="Title"
-      onChange={e => setTask({...task, name: e.target.
-      value})}/>
+          <textarea name="description" placeholder="description"
+          onChange={e => setTask({...task, description: e.target.
+            value})}></textarea>
 
-      <textarea name="description" placeholder="description"
-      onChange={e => setTask({...task, description: e.target.
-        value})}></textarea>
+          <button>
+            Submit
+          </button>
 
-      <button>
-        Submit
-      </button>
+        </form>
 
-    </form>
+ {tasks.map(task => {
+     return <article className="card card-body">
+       <h2>{task.name}</h2>
+       <p>{task.description}</p>
+     </article>
 
-    {tasks.map(task => {
-        return <article className="card card-body">
-          <h2>{task.name}</h2>
-          <p>{task.description}</p>
-        </article>
-
-    })}
+     })}
 
 
-    <Button onClick={signOut}>Sign out</Button>
-   </>
+ <Button onClick={signOut}>Sign out</Button>
+
+      </div>
+ 
+ </div>
   );
 }
 
